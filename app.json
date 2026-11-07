@@ -1,25 +1,60 @@
 {
   "expo": {
     "name": "STEADY",
-    "slug": "STEADY",
+    "slug": "0s-steady",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/branding/steady-icon.png",
+    "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/branding/steady-adaptive-foreground.png",
+        "monochromeImage": "./assets/branding/steady-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/branding/steady-favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "scheme": "steady",
+    "backgroundColor": "#000000",
+    "plugins": [
+      "expo-router",
+      "expo-system-ui",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000000",
+          "image": "./assets/branding/steady-splash.png",
+          "imageWidth": 300,
+          "resizeMode": "contain",
+          "dark": {
+            "backgroundColor": "#000000",
+            "image": "./assets/branding/steady-splash.png"
+          },
+          "android": {
+            "imageWidth": 280,
+            "image": "./assets/branding/steady-adaptive-foreground.png"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "d52f17e1-1345-4016-9b57-fa49f5f6cedc"
+      }
+    },
+    "owner": "osama.mohamed8"
   }
 }
