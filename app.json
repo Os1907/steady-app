@@ -43,7 +43,9 @@
             "image": "./assets/branding/steady-adaptive-foreground.png"
           }
         }
-      ]
+      ],
+      "expo-audio",
+      "expo-font"
     ],
     "extra": {
       "router": {

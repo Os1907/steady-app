@@ -19,7 +19,9 @@ function ThemedNavigator() {
           headerShown: false,
           contentStyle: { backgroundColor: colors.background },
         }}
-      />
+      >
+        <Stack.Screen name="(tabs)" />
+      </Stack>
     </>
   );
 }
