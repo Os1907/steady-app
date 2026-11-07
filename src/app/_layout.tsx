@@ -4,19 +4,30 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 
+import { ThemeProvider, useTheme } from '../theme/ThemeProvider';
+
 SplashScreen.setOptions({ duration: 300, fade: true });
 
-export default function RootLayout() {
+function ThemedNavigator() {
+  const { mode, colors } = useTheme();
+
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style={mode === 'dark' ? 'light' : 'dark'} />
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: '#000000' },
+          contentStyle: { backgroundColor: colors.background },
         }}
       />
     </>
   );
 }
 
+export default function RootLayout() {
+  return (
+    <ThemeProvider>
+      <ThemedNavigator />
+    </ThemeProvider>
+  );
+}

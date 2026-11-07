@@ -1,9 +1,11 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View } from 'react-native';
 
-import { colors } from '../../theme/colors';
+import { useTheme } from '../../theme/ThemeProvider';
 
 export function ScreenBackground() {
+  const { colors } = useTheme();
+
   return (
     <View className="flex-1 bg-background">
       <LinearGradient
@@ -22,3 +24,4 @@ export function ScreenBackground() {
     </View>
   );
 }
+
